@@ -184,6 +184,12 @@ msi_rgb/
 - **[OpenRGB](https://github.com/CalcProgrammer1/OpenRGB)** — Provided the initial reference for MSI Mystic Light controller structure (even though it didn't work for this board).
 - **MSI Center (Windows)** — The source of truth for the correct USB packet values.
 
+## Disclaimer
+
+This project was built for a **specific motherboard** (MSI PRO B760M-A DDR4 II, MS-7D99) running **Ubuntu 22.04 LTS**. The USB HID protocol, zone offsets, and packet structure were reverse-engineered from this exact hardware. **Do not clone and run blindly on a different board** — the VID/PID, data packet layout, or zone addresses may differ.
+
+**Recommended approach:** Use this repository as a **reference and starting point**, then adapt it to your own hardware with an AI coding assistant (e.g. [Kimi Code](https://github.com/MoonshotAI/kimi-cli)). Feed it your `lsusb` output, capture USB packets from MSI Center on Windows, and let the AI help you adjust the protocol parameters.
+
 ## License
 
 MIT
