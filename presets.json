@@ -1,0 +1,39 @@
+{
+  "groups": [
+    {
+      "name": "常用",
+      "colors": [
+        {"name": "纯白", "hex": "FFFFFF"},
+        {"name": "MSI红", "hex": "E3000F"},
+        {"name": "电竞绿", "hex": "00FF41"},
+        {"name": "冰蓝", "hex": "00D5FF"},
+        {"name": "暖黄", "hex": "FFCC80"},
+        {"name": "深紫", "hex": "BF00FF"},
+        {"name": "橙色", "hex": "FF8C00"},
+        {"name": "玫瑰金", "hex": "B76E79"}
+      ]
+    },
+    {
+      "name": "暗黑科技",
+      "colors": [
+        {"name": "霓虹粉", "hex": "FF10F0"},
+        {"name": "赛博蓝", "hex": "00F0FF"},
+        {"name": "毒液绿", "hex": "98FF98"},
+        {"name": "暗紫", "hex": "310062"},
+        {"name": "银灰", "hex": "87868C"},
+        {"name": "血红", "hex": "4A0000"}
+      ]
+    },
+    {
+      "name": "氛围",
+      "colors": [
+        {"name": "月光", "hex": "E8F4FF"},
+        {"name": "暮光", "hex": "E6E6FA"},
+        {"name": "珊瑚", "hex": "FF7F50"},
+        {"name": "樱花", "hex": "FFB7C5"},
+        {"name": "薄荷", "hex": "F0F8FF"},
+        {"name": "焦糖", "hex": "FF6700"}
+      ]
+    }
+  ]
+}

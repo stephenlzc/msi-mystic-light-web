@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSI Mystic Light Control</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="top-bar-content">
+            <div class="logo">
+                <span class="logo-icon">◈</span>
+                <span class="logo-text">Mystic Light</span>
+            </div>
+            <div class="master-control">
+                <span class="status-indicator" id="statusDot"></span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="masterSwitch" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Left: Zone Controls -->
+        <section class="zones-section">
+            <h2 class="section-title">区域控制</h2>
+            
+            <div class="zone-card" data-zone="JRGB1">
+                <div class="zone-header">
+                    <span class="zone-name">JRGB1</span>
+                    <label class="zone-sync-toggle">
+                        <input type="checkbox" class="zone-sync" checked>
+                        <span>同步</span>
+                    </label>
+                </div>
+                <div class="zone-body">
+                    <div class="color-row">
+                        <input type="color" class="color-picker" value="#FFFFFF">
+                        <span class="color-hex">#FFFFFF</span>
+                    </div>
+                    <div class="color-row color2-row hidden">
+                        <label class="color2-label">第二颜色</label>
+                        <input type="color" class="color2-picker" value="#0000FF">
+                        <span class="color2-hex">#0000FF</span>
+                    </div>
+                    <select class="mode-select">
+                        <!-- Populated by JS -->
+                    </select>
+                    <div class="slider-group">
+                        <label>亮度</label>
+                        <input type="range" class="brightness-slider" min="0" max="100" value="100">
+                        <span class="slider-value">100%</span>
+                    </div>
+                    <div class="slider-group">
+                        <label>速度</label>
+                        <input type="range" class="speed-slider" min="0" max="2" value="1" step="1">
+                        <span class="slider-value speed-label">中</span>
+                    </div>
+                </div>
+                <div class="zone-preview"></div>
+            </div>
+
+            <div class="zone-card" data-zone="JRAINBOW1">
+                <div class="zone-header">
+                    <span class="zone-name">JRAINBOW1</span>
+                    <label class="zone-sync-toggle">
+                        <input type="checkbox" class="zone-sync" checked>
+                        <span>同步</span>
+                    </label>
+                </div>
+                <div class="zone-body">
+                    <div class="color-row">
+                        <input type="color" class="color-picker" value="#FFFFFF">
+                        <span class="color-hex">#FFFFFF</span>
+                    </div>
+                    <div class="color-row color2-row hidden">
+                        <label class="color2-label">第二颜色</label>
+                        <input type="color" class="color2-picker" value="#0000FF">
+                        <span class="color2-hex">#0000FF</span>
+                    </div>
+                    <select class="mode-select"></select>
+                    <div class="slider-group">
+                        <label>亮度</label>
+                        <input type="range" class="brightness-slider" min="0" max="100" value="100">
+                        <span class="slider-value">100%</span>
+                    </div>
+                    <div class="slider-group">
+                        <label>速度</label>
+                        <input type="range" class="speed-slider" min="0" max="2" value="1" step="1">
+                        <span class="slider-value speed-label">中</span>
+                    </div>
+                </div>
+                <div class="zone-preview"></div>
+            </div>
+
+            <div class="zone-card" data-zone="JRAINBOW2">
+                <div class="zone-header">
+                    <span class="zone-name">JRAINBOW2</span>
+                    <label class="zone-sync-toggle">
+                        <input type="checkbox" class="zone-sync" checked>
+                        <span>同步</span>
+                    </label>
+                </div>
+                <div class="zone-body">
+                    <div class="color-row">
+                        <input type="color" class="color-picker" value="#FFFFFF">
+                        <span class="color-hex">#FFFFFF</span>
+                    </div>
+                    <div class="color-row color2-row hidden">
+                        <label class="color2-label">第二颜色</label>
+                        <input type="color" class="color2-picker" value="#0000FF">
+                        <span class="color2-hex">#0000FF</span>
+                    </div>
+                    <select class="mode-select"></select>
+                    <div class="slider-group">
+                        <label>亮度</label>
+                        <input type="range" class="brightness-slider" min="0" max="100" value="100">
+                        <span class="slider-value">100%</span>
+                    </div>
+                    <div class="slider-group">
+                        <label>速度</label>
+                        <input type="range" class="speed-slider" min="0" max="2" value="1" step="1">
+                        <span class="slider-value speed-label">中</span>
+                    </div>
+                </div>
+                <div class="zone-preview"></div>
+            </div>
+
+            <div class="zone-card" data-zone="ONBOARD">
+                <div class="zone-header">
+                    <span class="zone-name">主板灯带</span>
+                    <label class="zone-sync-toggle">
+                        <input type="checkbox" class="zone-sync" checked>
+                        <span>同步</span>
+                    </label>
+                </div>
+                <div class="zone-body">
+                    <div class="color-row">
+                        <input type="color" class="color-picker" value="#FFFFFF">
+                        <span class="color-hex">#FFFFFF</span>
+                    </div>
+                    <div class="color-row color2-row hidden">
+                        <label class="color2-label">第二颜色</label>
+                        <input type="color" class="color2-picker" value="#0000FF">
+                        <span class="color2-hex">#0000FF</span>
+                    </div>
+                    <select class="mode-select"></select>
+                    <div class="slider-group">
+                        <label>亮度</label>
+                        <input type="range" class="brightness-slider" min="0" max="100" value="100">
+                        <span class="slider-value">100%</span>
+                    </div>
+                    <div class="slider-group">
+                        <label>速度</label>
+                        <input type="range" class="speed-slider" min="0" max="2" value="1" step="1">
+                        <span class="slider-value speed-label">中</span>
+                    </div>
+                </div>
+                <div class="zone-preview"></div>
+            </div>
+        </section>
+
+        <!-- Right: Presets & Automation -->
+        <section class="sidebar">
+            <!-- Presets -->
+            <div class="panel">
+                <h2 class="section-title">快捷预设</h2>
+                <div class="preset-tabs" id="presetTabs">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="preset-grid" id="presetGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Schedule -->
+            <div class="panel">
+                <h2 class="section-title">自动灯光</h2>
+                <div class="schedule-header">
+                    <span>随时间自动变色</span>
+                    <label class="toggle-switch small">
+                        <input type="checkbox" id="scheduleToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="schedule-slots" id="scheduleSlots">
+                    <div class="slot-row">
+                        <span class="slot-time">06:00 - 18:00</span>
+                        <span class="slot-color" style="background:#E8F4FF"></span>
+                        <span class="slot-mode">Static</span>
+                    </div>
+                    <div class="slot-row">
+                        <span class="slot-time">18:00 - 22:00</span>
+                        <span class="slot-color" style="background:#FFCC80"></span>
+                        <span class="slot-mode">Breathing</span>
+                    </div>
+                    <div class="slot-row">
+                        <span class="slot-time">22:00 - 06:00</span>
+                        <span class="slot-color" style="background:#4A0000"></span>
+                        <span class="slot-mode">Static</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

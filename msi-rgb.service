@@ -1,0 +1,16 @@
+[Unit]
+Description=MSI Mystic Light RGB Web Control Panel
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/msi_rgb
+ExecStart=/usr/bin/python3 /home/msi_rgb/server.py
+Restart=always
+RestartSec=3
+User=root
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
