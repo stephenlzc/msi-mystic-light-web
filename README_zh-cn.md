@@ -43,6 +43,20 @@
 
 唯一剩下的路：从 Linux 宿主机直接跟硬件对话。
 
+## ⚠️ 使用声明
+
+> **这不是一个即插即用的通用工具。**
+>
+> 本项目是针对**特定主板**（MSI PRO B760M-A DDR4 II，MS-7D99）在 **Ubuntu 22.04 LTS** 环境下逆向开发的。USB HID 协议、区域偏移表、数据包结构均来自该硬件的实测。
+>
+> **请勿直接 `git clone` 后在不同主板上运行。** 如果你的主板型号、USB ID 或 HID 数据包大小不同，代码不会直接工作。
+>
+> **推荐 workflow：**
+> 1. 阅读本 README 和 `REQUIREMENTS.md` 中的协议文档。
+> 2. 将本仓库作为**参考起点**。
+> 3. 使用 AI 编程助手（如 [Kimi Code](https://github.com/MoonshotAI/kimi-cli)）根据自己的硬件调整协议参数（VID、PID、区域偏移、数据包大小等）。
+> 4. 先在本地验证（`python3 server.py`），确认灯能正常响应后再配置常驻服务。
+
 ## 3. 踩坑记录
 
 ### 3.1 OpenRGB：能识别，灯不亮
@@ -182,12 +196,6 @@ msi_rgb/
 - **[Kimi Code](https://github.com/MoonshotAI/kimi-cli)**（[Moonshot AI](https://github.com/MoonshotAI)）— 整个项目完全在 Kimi Code 中开发完成。AI 驱动的编程环境使本次逆向工程和完整实现的整个过程成为可能。
 - **[OpenRGB](https://github.com/CalcProgrammer1/OpenRGB)** — 提供了 MSI Mystic Light 控制器结构的初始参考（虽然最终未在该主板上工作）。
 - **MSI Center (Windows)** — 正确 USB 数据包值的来源。
-
-## 使用声明
-
-本项目是针对**特定主板**（MSI PRO B760M-A DDR4 II，MS-7D99）在 **Ubuntu 22.04 LTS** 环境下逆向开发的。USB HID 协议、区域偏移表、数据包结构均来自该硬件的实测。**请勿在不同主板上直接克隆运行** — VID/PID、数据包布局或区域地址可能完全不同。
-
-**推荐用法：** 将本仓库作为**参考起点**，然后使用 AI 编程助手（如 [Kimi Code](https://github.com/MoonshotAI/kimi-cli)）根据自己的硬件进行适配。向 AI 提供你的 `lsusb` 输出、从 Windows MSI Center 抓取的 USB 数据包，让 AI 协助调整协议参数。
 
 ## 许可证
 

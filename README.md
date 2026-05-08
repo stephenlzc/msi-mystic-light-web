@@ -43,6 +43,20 @@ I wanted to control my motherboard's RGB lighting from Linux. The official **MSI
 
 The only remaining path was to talk to the hardware directly from Linux.
 
+## ⚠️ Disclaimer
+
+> **This is NOT a universal drop-in tool.**
+>
+> This project was built for a **specific motherboard** (MSI PRO B760M-A DDR4 II, MS-7D99) running **Ubuntu 22.04 LTS**. The USB HID protocol, zone offsets, and packet structure were reverse-engineered from this exact hardware.
+>
+> **Do not `git clone` and run blindly on a different board.** The VID/PID, data packet layout, or zone addresses may differ. If your motherboard model, USB IDs, or HID packet size are different, the code will not work out of the box.
+>
+> **Recommended workflow:**
+> 1. Read this README and the protocol docs in `REQUIREMENTS.md`.
+> 2. Use this repo as a **reference and starting point**.
+> 3. Open it in an AI coding assistant (e.g. [Kimi Code](https://github.com/MoonshotAI/kimi-cli)) and adapt the protocol parameters (`VID`, `PID`, zone offsets, packet size) to your own hardware.
+> 4. Validate locally (`python3 server.py`) before setting up a permanent service.
+
 ## 3. Problems Encountered
 
 ### 3.1 OpenRGB: Recognized but Lights Stay Off
@@ -183,12 +197,6 @@ msi_rgb/
 - **[Kimi Code](https://github.com/MoonshotAI/kimi-cli)** by [Moonshot AI](https://github.com/MoonshotAI) — This entire project was developed inside Kimi Code. The AI-powered coding environment made the whole reverse-engineering and implementation process possible.
 - **[OpenRGB](https://github.com/CalcProgrammer1/OpenRGB)** — Provided the initial reference for MSI Mystic Light controller structure (even though it didn't work for this board).
 - **MSI Center (Windows)** — The source of truth for the correct USB packet values.
-
-## Disclaimer
-
-This project was built for a **specific motherboard** (MSI PRO B760M-A DDR4 II, MS-7D99) running **Ubuntu 22.04 LTS**. The USB HID protocol, zone offsets, and packet structure were reverse-engineered from this exact hardware. **Do not clone and run blindly on a different board** — the VID/PID, data packet layout, or zone addresses may differ.
-
-**Recommended approach:** Use this repository as a **reference and starting point**, then adapt it to your own hardware with an AI coding assistant (e.g. [Kimi Code](https://github.com/MoonshotAI/kimi-cli)). Feed it your `lsusb` output, capture USB packets from MSI Center on Windows, and let the AI help you adjust the protocol parameters.
 
 ## License
 
