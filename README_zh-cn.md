@@ -179,6 +179,7 @@ msi_rgb/
 
 ## 9. 致谢
 
+- **[Kimi Code](https://github.com/MoonshotAI/kimi-cli)**（[Moonshot AI](https://github.com/MoonshotAI)）— 整个项目完全在 Kimi Code 中开发完成。AI 驱动的编程环境使本次逆向工程和完整实现的整个过程成为可能。
 - **OpenRGB** — 提供了 MSI Mystic Light 控制器结构的初始参考（虽然最终未在该主板上工作）。
 - **MSI Center (Windows)** — 正确 USB 数据包值的来源。
 
